@@ -17,10 +17,12 @@ namespace DAL
         {
             modelBuilder.Entity<Landmark>(l =>
             {
-                l.HasNoKey();
+                l.HasKey(l => l.Description);
             });
 
             modelBuilder.Entity<Landmark>().HasData(new LandmarkSeeder().Landmarks);
+
+            base.OnModelCreating(modelBuilder);
         }
     }
 }

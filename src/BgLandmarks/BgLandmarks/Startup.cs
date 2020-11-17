@@ -11,7 +11,11 @@ namespace BgLandmarks
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
-            services.AddDbContext<LandmarkContext>(options => options.UseInMemoryDatabase(databaseName: "BgLandmarks"));
+            services.AddDbContext<LandmarkContext>(options =>
+            {
+                options.EnableSensitiveDataLogging(true);
+                options.UseInMemoryDatabase(databaseName: "BgLandmarks");
+            });
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)

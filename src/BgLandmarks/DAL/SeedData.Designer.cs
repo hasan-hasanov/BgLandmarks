@@ -22,7 +22,7 @@ namespace DAL {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "16.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    public class SeedData {
+    internal class SeedData {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
@@ -36,7 +36,7 @@ namespace DAL {
         ///   Returns the cached ResourceManager instance used by this class.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        public static global::System.Resources.ResourceManager ResourceManager {
+        internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
                     global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("DAL.SeedData", typeof(SeedData).Assembly);
@@ -51,7 +51,7 @@ namespace DAL {
         ///   resource lookups using this strongly typed resource class.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        public static global::System.Globalization.CultureInfo Culture {
+        internal static global::System.Globalization.CultureInfo Culture {
             get {
                 return resourceCulture;
             }
@@ -66,7 +66,7 @@ namespace DAL {
         ///      &quot;Name&quot;:&quot;Жеравна - архитектурен резерват&quot;,
         ///      &quot;Description&quot;:&quot;Село Жеравна е разположено на 16 км югоизточно от гр. Котел в полите на Източна Стара планина. Селището се появява през XII-XIV век. През XVIII век се превръща в занаятчийски и културен център. Днес Жеравна е известен архитектурен резерват. В селото са запазени над 200 дървени къщи (всяка паметник на културата), строени по време на Възраждането. Някои от тях са на повече от 300 години. Запазен е автентичния възрожденски облик–тес [rest of string was truncated]&quot;;.
         /// </summary>
-        public static string HistoryAndCulture {
+        internal static string HistoryAndCulture {
             get {
                 return ResourceManager.GetString("HistoryAndCulture", resourceCulture);
             }
@@ -78,7 +78,7 @@ namespace DAL {
         ///      &quot;Name&quot;:&quot;връх Вихрен&quot;,
         ///      &quot;Description&quot;:&quot;Връх първенец на Пирин планина, която се помества в Югозападна България, част от Рило-Родопския масив. Висок 2914 м., се нарежда на второ място по височина в страната и на трето на Балканския полуостров. Разположен е между реките Струма и Места. В района, в който се намира върха са разположени голяма част от езерата, образувани в планината. Единственно тук от цялата територия на страната вирее цветето еделвайс. Достъпен е откъм долината на Бъндерица [rest of string was truncated]&quot;;.
         /// </summary>
-        public static string Landmarks {
+        internal static string Landmarks {
             get {
                 return ResourceManager.GetString("Landmarks", resourceCulture);
             }
@@ -90,7 +90,7 @@ namespace DAL {
         ///      &quot;Name&quot;:&quot;Ивановските скални църкви &quot;,
         ///      &quot;Description&quot;:&quot;Ивановските скални църкви се намират на 18 км. южно от град Русе. Отличават се от другите запазени скални манастирски комплекси в България с добре запазените си стенописи. \r\rЗа разлика от традиционните манастири, който се състоят от 1–2 църкви , монашеска и стопанска части, в Иваново има разклонена мрежа от малки скални църкви, параклиси и килии, издълбани на различна височина в скалите на живописния каньон на река Русенски лом и св [rest of string was truncated]&quot;;.
         /// </summary>
-        public static string МonasteriesАndТemples {
+        internal static string МonasteriesАndТemples {
             get {
                 return ResourceManager.GetString("МonasteriesАndТemples", resourceCulture);
             }
