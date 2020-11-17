@@ -1,7 +1,6 @@
-using DAL;
+using DAL.Queries;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace BgLandmarks
@@ -11,11 +10,7 @@ namespace BgLandmarks
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
-            services.AddDbContext<LandmarkContext>(options =>
-            {
-                options.EnableSensitiveDataLogging(true);
-                options.UseInMemoryDatabase(databaseName: "BgLandmarks");
-            });
+            services.AddScoped<IGetLandmarksQuery, GetLandmarksQuery>();
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)

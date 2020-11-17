@@ -1,7 +1,5 @@
-﻿using DAL;
+﻿using DAL.Queries;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
-using System.Threading.Tasks;
 
 namespace BgLandmarks.Controllers
 {
@@ -9,17 +7,17 @@ namespace BgLandmarks.Controllers
     [Route("landmarks")]
     public class LandmarkController : Controller
     {
-        private readonly LandmarkContext _context;
+        private readonly IGetLandmarksQuery _getLandmarksQuery;
 
-        public LandmarkController(LandmarkContext context)
+        public LandmarkController(IGetLandmarksQuery getLandmarksQuery)
         {
-            _context = context;
+            _getLandmarksQuery = getLandmarksQuery;
         }
 
         [HttpGet]
-        public async Task<IActionResult> GetAllLandmarks()
+        public IActionResult GetAllLandmarks()
         {
-            var landmarks = await _context.Landmarks.ToListAsync();
+            var landmarks = _getLandmarksQuery.Execute();
             return Ok(landmarks);
         }
     }
