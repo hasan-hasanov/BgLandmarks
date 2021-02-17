@@ -1,7 +1,11 @@
+using DAL.Entities;
 using DAL.Queries;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
+using System.Collections.Generic;
+using System.Text.Json;
 
 namespace BgLandmarks
 {
@@ -18,9 +22,12 @@ namespace BgLandmarks
             app.UseHttpsRedirection();
             app.UseRouting();
 
-            app.UseEndpoints(endpoints =>
+            app.Run(async context =>
             {
-                endpoints.MapControllers();
+                IGetLandmarksQuery landmarksQuery = context.RequestServices.GetService<IGetLandmarksQuery>();
+                List<Landmark> landmarks = landmarksQuery.Execute();
+
+                await context.Response.WriteAsync(JsonSerializer.Serialize(landmarks));
             });
         }
     }
